@@ -11,11 +11,11 @@
         android:id="@+id/Date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="152dp"
-        android:hint="Date"
+        android:layout_marginTop="156dp"
+        android:hint="Date(12/04/19)"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.221"
+        app:layout_constraintHorizontal_bias="0.457"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -47,8 +47,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="72dp"
         android:layout_marginLeft="72dp"
-        android:layout_marginBottom="404dp"
-        android:hint="Sleeptime"
+        android:layout_marginBottom="368dp"
+        android:hint="Sleeptime(12:30:am)"
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -59,8 +59,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="72dp"
         android:layout_marginLeft="72dp"
-        android:layout_marginBottom="288dp"
-        android:hint="Waketime"
+        android:layout_marginBottom="252dp"
+        android:hint="Waketime(7:30:am)"
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
