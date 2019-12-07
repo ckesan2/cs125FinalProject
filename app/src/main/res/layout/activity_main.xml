@@ -27,7 +27,7 @@
         android:layout_height="431dp"
         android:layout_marginTop="96dp"
         android:background="#12185F"
-        android:headerBackground="#12185F"
+        android:headerBackground="@color/colorPrimaryDark"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.304"

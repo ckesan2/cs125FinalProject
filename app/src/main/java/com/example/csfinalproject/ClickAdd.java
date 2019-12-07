@@ -135,24 +135,62 @@ public class ClickAdd extends AppCompatActivity {
             int twm = Integer.parseInt(b[1]);
             if (sleep.contains("AM")|| sleep.contains("am")) {
                 hours.setText(timeComputeAM(tsh, tsm, twh, twm));
-                /**int num = Integer.parseInt(timeComputeAM(tsh, tsm, twh, twm));
-                if (num < 7) {
-                    sleepMessage.setText("NOt enough");
-                } else if (num > 10) {
-                    sleepMessage.setText("Too much");
+                int diffh;
+                int diffm = twm - tsm;
+                if (tsh == 12 && diffm == 0) {
+                    int num = 12 - twh;
+                    diffh = 12 - num;
+                } else if (tsh == 12 && diffm > 0) {
+                    int num = 12 - twh;
+                    diffh = 12 - num;
+                } else if (tsh == 12 && diffm < 0) {
+                    diffm = 60 - Math.abs(twm - tsm);
+                    int num = 12 - twh;
+                    diffh = 12 - num - 1;
+                } else if (diffm == 0) {
+                    diffh = twh - tsh;
+                } else if (diffm > 0) {
+                    diffh = twh - tsh;
+                } else {
+                    diffm = 60 - Math.abs(twm - tsm);
+                    diffh = twh - tsh - 1;
+                }
+
+                if (diffh < 7) {
+                    sleepMessage.setText("https://www.youtube.com/watch?v=iMfsa7ntJZE");
+                } else if (diffh > 10) {
+                    sleepMessage.setText("https://www.youtube.com/watch?v=dnRDbJ6VB4A");
                 } else {
                     sleepMessage.setText("That's a great amount of sleep!");
-                } */
+                }
             } else if (sleep.contains("PM") || sleep.contains("pm")) {
                 hours.setText(timeComputePM(tsh, tsm, twh, twm));
-                /**int num = Integer.parseInt(timeComputeAM(tsh, tsm, twh, twm));
-                if (num < 7) {
-                    sleepMessage.setText("not enough");
-                } else if (num > 10) {
-                    sleepMessage.setText("too much");
+                int diffh;
+                int sleepnum;
+                int num;
+                int diffm = twm - tsm;
+                if (diffm == 0) {
+                    sleepnum = 12 - tsh;
+                    num = 12 - twh;
+                    diffh = 12 - num + sleepnum;
+                } else if (diffm > 0) {
+                    sleepnum = 12 - tsh;
+                    num = 12 - twh;
+                    diffh = 12 - num + sleepnum;
+                } else {
+                    diffm = 60 - Math.abs(twm - tsm);
+                    sleepnum = 12 - tsh - 1;
+                    num = 12 - twh;
+                    diffh = 12 - num + sleepnum;
+                }
+
+                if (diffh < 7) {
+                    sleepMessage.setText("https://www.youtube.com/watch?v=iMfsa7ntJZE");
+                } else if (diffh > 10) {
+                    sleepMessage.setText("https://www.youtube.com/watch?v=dnRDbJ6VB4A");
                 } else {
                     sleepMessage.setText("That's a great amount of sleep!");
-                }*/
+                }
             } else  {
                 hours.setText("Should contain AM or PM ");
             }
